@@ -22,8 +22,9 @@ class Jaws extends Movie {
         super("Jaws");
     }
 
+    @Override
     public String plot() {
-        return "A shark eats a lot of people";
+        return "A shark eats lots of people";
     }
 }
 
@@ -73,9 +74,8 @@ public class Main {
 
     public static void main(String[] args) {
         for (int i = 1; i < 11; i++) {
-            Movie movie = randomMovie();
+            Movie movie = randomMovie(); //movie will be a new object basically because movie = (for instance) new Jaws();
             System.out.println("Movie #" + i + ":" + movie.getName() + "\n" + "Plot: " + movie.plot() + "\n");
-
         }
     }
 
@@ -94,6 +94,6 @@ public class Main {
             case 5:
                 return new Forgetable();
         }
-        return null;
+        return null; // this is why getName() says we might have an NPE, but that's not possible because of Math.random
     }
 }
